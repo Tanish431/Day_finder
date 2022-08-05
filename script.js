@@ -18,6 +18,7 @@ scyear.addEventListener('change', clear)
 function clear(){
     paragraph.textContent = "THE WEEKDAY: "
     odd=0
+    document.getElementById("subm").disabled = false;
 }
 scmon.addEventListener('change', check)
 function check(){
@@ -89,6 +90,7 @@ function check(){
         date.add(copt30, null)
         date.add(copt31, null)
     }
+    document.getElementById("subm").disabled = false
 }
 
 function form_process(){
@@ -206,4 +208,6 @@ function form_process(){
     if(weekday==0){
         paragraph.textContent += "Sunday"
     }
+    document.getElementById("subm").disabled = true;
 }
+
