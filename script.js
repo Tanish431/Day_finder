@@ -1,4 +1,14 @@
 console.log("If you are here, you are trying to find errors and you are happy or sad(depends on you) to see that there is none :)")
+$(document).on('blur', 'input[name=year]', function() {
+    var _this = $(this);
+    var min = parseInt(_this.attr('min')) || 1; 
+    var max = parseInt(_this.attr('max')) || 100; 
+    var val = parseInt(_this.val()) || (min - 1); 
+    if (val < min)
+      _this.val(min);
+    if (val > max)
+      _this.val(max);
+  })
 const copt29 = document.createElement("option")
 const copt30 = document.createElement("option")
 const copt31 = document.createElement("option")
@@ -210,4 +220,5 @@ function form_process(){
     }
     document.getElementById("subm").disabled = true;
 }
+
 
